@@ -1,8 +1,8 @@
 //filter function
-Array.prototype.filter = function(cb){
-    let newArr=[];
-    this.forEach(function(current){
-        if(cb(current)){
+Array.prototype.filter = function (cb) {
+    let newArr = [];
+    this.forEach(function (current) {
+        if (cb(current)) {
             newArr.push(current)
         }
     }, newArr)
@@ -10,4 +10,6 @@ Array.prototype.filter = function(cb){
 }
 
 const a = [1, 2, 3, 4];
-console.log(a.filter(function(x){return (x%2==0)}));
+console.log(a.filter(function (x) {
+    return (x % 2 == 0)
+}));
