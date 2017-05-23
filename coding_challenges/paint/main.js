@@ -18,10 +18,17 @@ const orderSupplies = (item, callback) => {
   }, deliveryTime )
 }
 
-//orderSupplies('paint', (delivery) => console.log(`${delivery.item} delivered! Time to ${delivery.action()}`));
-//orderSupplies('brush', (delivery) => console.log(`${delivery.item} delivered! Time to ${delivery.action()}`));
 
+let paintMixed = false;
 orderSupplies('paint', (delivery) => {
-    console.log(`${delivery.item} delivered! Time to ${delivery.action()}`)
-    orderSupplies('brush', (delivery) => console.log(`${delivery.item} delivered! Time to ${delivery.action()}`));
-})
+  console.log(`${delivery.item} delivered! Time to ${delivery.action()}`)
+  paintMixed = true;
+});
+
+orderSupplies('brush', (delivery) => {
+  while (paintMixed==false){
+    //waitings
+  }
+  console.log(`${delivery.item} delivered! Time to ${delivery.action()}`)
+
+});

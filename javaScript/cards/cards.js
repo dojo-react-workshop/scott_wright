@@ -82,7 +82,7 @@ function DeckClass(imagePath){
     }
 }
 
-module.exports = new DeckClass(imagePath)
+module.exports = new DeckClass()
 
 // let myDeck = new DeckClass('./images')
 // myDeck.new()
