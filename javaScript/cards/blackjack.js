@@ -42,13 +42,13 @@ function BlackJack(){
         cards.new()
         cards.shuffle()
 
-        //dealer takes 3 cards
-        cards.deal(3).forEach((card)=>{
+        //dealer takes 2 cards
+        cards.deal(2).forEach((card)=>{
             dealerHand.push(card)
         })
 
-        //player takes 3 cards
-        cards.deal(3).forEach((card)=>{
+        //player takes 2 cards
+        cards.deal(2).forEach((card)=>{
             playerHand.push(card)
         })
     }
