@@ -20,15 +20,18 @@ const orderSupplies = (item, callback) => {
 
 
 let paintMixed = false;
+let brush = null;
 orderSupplies('paint', (delivery) => {
   console.log(`${delivery.item} delivered! Time to ${delivery.action()}`)
   paintMixed = true;
+  if (brush){
+    console.log(`${brush.item} delivered! Time to ${brush.action()}`)
+  }
 });
 
 orderSupplies('brush', (delivery) => {
-  while (paintMixed==false){
-    //waitings
-  }
-  console.log(`${delivery.item} delivered! Time to ${delivery.action()}`)
-
+  if (paintMixed)
+    console.log(`${delivery.item} delivered! Time to ${delivery.action()}`)
+  else
+    brush = delivery
 });
