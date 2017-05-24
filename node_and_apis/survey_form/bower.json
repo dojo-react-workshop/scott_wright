@@ -1,0 +1,21 @@
+{
+  "name": "survey_form",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "WRIGHT",
+    "SCOTT"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/dojo-react-workshop/scott_wright",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
