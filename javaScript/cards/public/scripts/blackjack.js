@@ -1,10 +1,11 @@
 //blackjack game
-const path = require('path')
+//const path = require('path')
 //get a deck of cards
 
 function BlackJack(){
     //private deck of cards
-    const deck = require (path.join(__dirname + '/cards.js'))
+    //const deck = require (path.join(__dirname + '/cards.js'))
+    deck = new DeckClass
     let gameOn = true
     deck.imagePath = './images'
     function getScore(cards){
@@ -131,16 +132,3 @@ function BlackJack(){
     }
 }
 
-let game = new BlackJack
-game.newGame()
-console.log('player hand')
-console.log(game.getPlayerHand())
-while (game.getPlayerHand().score < 17){
-    game.playerTurn()
-    console.log('player hand')
-    console.log(game.getPlayerHand())
-}
-game.dealerTurn()
-console.log('dealer hand')
-console.log(game.getDealerHand())
-console.log(game.gameResult())
