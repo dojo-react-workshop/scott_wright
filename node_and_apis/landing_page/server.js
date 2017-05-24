@@ -17,7 +17,7 @@ var server = http.createServer(function(request, response) {
         case '/dojos/new' :
         loadFile('dojos.html').then((data)=>response.end(data))
         case '/sync' :
-        loadFile('scott.html').then((data)=>response.end(data))
+        loadFile('scott.html').then((data)=>response.end(data)).catch((err)=>{throw(err)})
         break
         default :
             response.end('no page here!!!!')
