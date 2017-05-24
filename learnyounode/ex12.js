@@ -1,10 +1,11 @@
 const http = require ('http')
 const fs = require ('fs')
-const file = process.argv[3]
+const map = require('through2-map')
 
 const server = http.createServer((req,res)=>{
-    var stream = fs.createReadStream(file)
-    stream.pipe(res)
+   req.pipe(map((chunk)=>{
+       return chunk.toString().toUpperCase()
+   })).pipe(res)
 })
 
 server.listen(process.argv[2])
