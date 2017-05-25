@@ -1,29 +1,43 @@
+//global game variable
+let game = new BlackJack
 $(document).ready(()=>{
-    let game = new BlackJack
+    
+    //setup a new game
     game.newGame()
+
     //display dealer cards
     let cardHTML = ``
-    game.getDealerHand().cards.forEach((card)=>{
+    let scoreText = ''
+    let theHand = game.getDealerHand()
+    scoreText = `Dealer Holds: ${theHand.score}, `
+    theHand.cards.forEach((card)=>{
         cardHTML += `<img src="${card.image}" alt="${card.name}">`
     })
     $('#dealer').html(cardHTML)
 
     //display player cards
     cardHTML = ''
-    game.getPlayerHand().cards.forEach((card)=>{
+    theHand = game.getPlayerHand()
+    scoreText += `Player Holds: ${theHand.score} - `
+    theHand.cards.forEach((card)=>{
         cardHTML += `<img src="${card.image}" alt="${card.name}">`
     })
     $('#player').html(cardHTML)
+    scoreText += game.gameResult()
     
-    // console.log('player hand')
-    // console.log(game.getPlayerHand())
-    // while (game.getPlayerHand().score < 17){
-    //     game.playerTurn()
-    //     console.log('player hand')
-    //     console.log(game.getPlayerHand())
-    // }
-    // game.dealerTurn()
-    // console.log('dealer hand')
-    // console.log(game.getDealerHand())
-    // console.log(game.gameResult())
+    //update the score
+    $('#score').text(scoreText)
+
+    //if someone already won, fade out the hit/stay buttons
+    if (!game.gameOn()){
+        $('#hitButton').fadeOut()
+        $('#stayButton').fadeOut()
+    }
+
+    //new game button
+    $('#newButton').click(()=>{
+        location.reload()
+    })
 })
+
+

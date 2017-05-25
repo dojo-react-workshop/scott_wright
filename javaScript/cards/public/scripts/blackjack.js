@@ -42,27 +42,31 @@ function BlackJack(){
     }
     this.gameResult = function(){
         if(gameOn){
-            return 'Game is in progress.'
+            return "Player's turn."
         } else {
             let retString = ``
             if (getScore(playerCards) > 21){
                 //player bust
                 return 'Player bust, dealer wins!'
-            }
-            if (getScore(dealerCards) > 21){
+            } else if (getScore(dealerCards) > 21){
                 //player bust
                 return 'Dealer bust, player wins!'
-            }
-            if (getScore(playerCards) > getScore(dealerCards)){
+            } else if (getScore(playerCards) == getScore(dealerCards)){
+                //draw
+                return 'Push!'
+            } else if (getScore(playerCards) == 21){
+                //player black jack
+                return 'Black Jack - Player wins!'
+            } else if (getScore(dealerCards) == 21){
+                //dealer black jack
+                return 'Black Jack - Dealer wins!'
+            } else if (getScore(playerCards) > getScore(dealerCards)){
                 //player wins
                 return 'Player wins!'
             } else if (getScore(playerCards) < getScore(dealerCards)) {
                 //dealer wins
                 return 'Dealer wins!'
-            } else {
-                //draw
-                return 'Push!'
-            }
+            } 
         }
     }
     this.newGame = function(){

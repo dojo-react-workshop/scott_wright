@@ -55,6 +55,7 @@ app.get('/names', function (req, res) {
 
 app.post('/names', function (req, res) {
   //add the new name to the namelist
+  console.log(req)
   if (req.body.fullName != "") {
     nameList.push(req.body.fullName)
     writer.write(req.body.fullName + '\n')
