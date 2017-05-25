@@ -45,7 +45,6 @@ app.get('/', function (req, res) {
 })
 
 app.post('/result',function(req,res){
-    console.log(req.body);
     res.render('results', {"data": req.body})
 });
 
@@ -55,14 +54,21 @@ app.get('/names', function (req, res) {
 
 app.post('/names', function (req, res) {
   //add the new name to the namelist
-  console.log(req)
   if (req.body.fullName != "") {
     nameList.push(req.body.fullName)
     writer.write(req.body.fullName + '\n')
   }
-  res.render('nameList', {"data" : nameList})
+  res.end()
 })
 
+app.post('/remove', function (req, res) {
+  //add the new name to the namelist
+  if (req.body.fullName != "") {
+    nameList.push(req.body.fullName)
+    //remove fullName from the file
+  }
+  res.end()
+})
 // load initial name list
 const fs = require('fs')
 const nameFile = "./names.txt"

@@ -31,5 +31,14 @@ p{
 }
 
 ul {
-    border: thin solid lightgray
+    border: thin solid lightgray;
+    list-style-type:none;
+}
+li {
+    margin-top: 1em;
+}
+.trash{
+    width:1em;
+    height:1em;
+    vertical-align: middle;
 }
