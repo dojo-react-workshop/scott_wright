@@ -5,7 +5,7 @@
 function BlackJack(){
     //private deck of cards
     //const deck = require (path.join(__dirname + '/cards.js'))
-    deck = new DeckClass
+    let deck = new DeckClass
     let gameOn = true
     deck.imagePath = './images'
     function getScore(cards){

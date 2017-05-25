@@ -5,11 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Black Jack</title>
 	<link rel="stylesheet" href="./style/main.css">
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 	<script src="./bower_components/jquery/dist/jquery.js"></script>
 	<script src="./bower_components/socket.io-client/dist/socket.io.js"></script>
-	<script src="./scripts/cards.js"></script>
-	<script src="./scripts/blackjack.js"></script>
-	<script src="./scripts/main.js"></script>
+	<script script type="text/babel" src="./scripts/cards.js"></script>
+	<script script type="text/babel" src="./scripts/blackjack.js"></script>
+	<script script type="text/babel" src="./scripts/main.js"></script>
 </head>
 	<body>
 		<div id="wrapper">
@@ -20,7 +21,7 @@
 				<h2>Player's hand</h2>
 				<div id="player">
 				</div>
-				<h3 id="score"><h3>
+				<h3 id="score"></h3>
 				<input id="hitButton" type="button" value="Hit">
 				<input id="stayButton" type="button" value="Stay">
 				<input id="newButton" type="button" value="New Game">

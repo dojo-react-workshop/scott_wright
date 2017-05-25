@@ -1,16 +1,39 @@
 //global game variable
 let game = new BlackJack
-$(document).ready(()=>{
+$(document).ready(function(){
     
     //setup a new game
     game.newGame()
 
-    //display dealer cards
+    //draw initial screen
+    updateDisplay()
+
+    //new game button just refreshes-- starts it over
+    $('#newButton').click(function(){
+        location.reload()
+    })
+
+    //done taking cards, dealers turn
+    $('#stayButton').click(function(){
+        game.dealerTurn()
+        updateDisplay()
+    })
+
+    //players turn
+    $('#hitButton').click(function(){
+        game.playerTurn()
+        updateDisplay()
+    })
+})
+
+
+function updateDisplay(){
+     //display dealer cards
     let cardHTML = ``
     let scoreText = ''
     let theHand = game.getDealerHand()
     scoreText = `Dealer Holds: ${theHand.score}, `
-    theHand.cards.forEach((card)=>{
+    theHand.cards.forEach(function(card){
         cardHTML += `<img src="${card.image}" alt="${card.name}">`
     })
     $('#dealer').html(cardHTML)
@@ -19,7 +42,7 @@ $(document).ready(()=>{
     cardHTML = ''
     theHand = game.getPlayerHand()
     scoreText += `Player Holds: ${theHand.score} - `
-    theHand.cards.forEach((card)=>{
+    theHand.cards.forEach(function(card){
         cardHTML += `<img src="${card.image}" alt="${card.name}">`
     })
     $('#player').html(cardHTML)
@@ -33,11 +56,4 @@ $(document).ready(()=>{
         $('#hitButton').fadeOut()
         $('#stayButton').fadeOut()
     }
-
-    //new game button
-    $('#newButton').click(()=>{
-        location.reload()
-    })
-})
-
-
+}
