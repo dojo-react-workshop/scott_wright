@@ -10,7 +10,22 @@
 </head>
 	<body>
 		<div id="wrapper">
-            <h1>hello</h1>
+			<h2 class="underlined">Submitted Information</h2>
+			<p class="result">Your Name:</p>
+			<p class="result"><%=data.fullName%></p>
+			<br>
+			<p class="result">Dojo Location:</p>
+			<p class="result"><%=data.location%></p>
+			<br>
+			<p class="result">Favorite Language:</p>
+			<p class="result"><%=data.language%></p>
+			<br>
+			<p class="result">Comment:</p>
+			<p class="result"><%=data.comments%></p>
+			<br>
+			<form>
+				<p><input type="button" id="back" value="Go Back" onClick="history.go(-1);return true;"></p>
+			</form>
 		</div>
 	</body>
 </html>

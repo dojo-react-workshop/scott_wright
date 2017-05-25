@@ -39,11 +39,12 @@ http.listen(port, function(){
     console.log(`Server is running, URL: http://${ip.address()}:${port}`);
 })
 
+//app routing
 app.get('/', function (req, res) {
   res.render('index')
 })
 
 app.post('/result',function(req,res){
     console.log(req.body);
-    res.render('results')
+    res.render('results', {"data": req.body})
 });
