@@ -1,3 +1,3 @@
 $(document).ready(()=>{
-    alert("hi")
+   // alert("hi")
 })

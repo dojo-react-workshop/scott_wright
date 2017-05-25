@@ -10,7 +10,36 @@
 </head>
 	<body>
 		<div id="wrapper">
-            <h1>hello</h1>
+			<form action="/result" method="post">
+        			<label for="fullName">Your Name:</label>
+        			<input name="fullName" type="text"  autofocus/>
+				<br>
+        			<label for="location">Dojo Location:</label>
+        			<select name="location">
+					  <option value="Jersey City">Jersey City</option>
+					  <option value="Seattle">Seattle</option>
+					  <option value="Orlando">Orlando</option>					  					  
+					  <option value="Los Angeles">Los Angeles</option>					  
+					  <option value="Columbus">Columbus</option>
+					  <option value="Honolulu">Honolulu</option>					  					  
+        			</select>
+				<br>
+        			<label for="language">Favorite Language:</label>
+        			<select name="language">
+					  <option value="JavaScript">JavaScript</option>
+					  <option value="C#">C#</option>
+					  <option value="Power Shell">Power Shell</option>					  					  
+					  <option value="VBA">VBA</option>					  
+        			</select>	
+				<br>
+				<label for="comments">Comment (optional)</label>
+				<br>
+				<textarea name="comments" rows="4" cols="50"></textarea>
+				<br>
+				<p><input id="submit" name="submit" type="submit"></p>
+			</form>
 		</div>
 	</body>
 </html>
+
+

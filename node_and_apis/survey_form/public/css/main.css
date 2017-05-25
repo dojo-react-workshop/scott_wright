@@ -1,0 +1,30 @@
+label, input, select, .result{
+    display: inline-block;
+    width: 190px;
+    margin: 10px 0px 0px 0px;
+    text-align:left;
+}
+.result{
+    margin: 10px 0px 0px 10px;
+}
+textarea{
+    width: 380px;
+}
+#wrapper {
+    width: 420px;
+    height:auto;
+    border: 1px solid lightgray;
+    padding: 20px;
+}
+p{
+    text-align: right;
+    margin:10px;
+}
+#submit, #back{
+    width:auto;
+    color:white;
+    background-color:#2b78e4
+}
+.underlined{
+    text-decoration: underline
+}
