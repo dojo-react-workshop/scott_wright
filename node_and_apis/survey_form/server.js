@@ -48,3 +48,17 @@ app.post('/result',function(req,res){
     console.log(req.body);
     res.render('results', {"data": req.body})
 });
+
+app.get('/names', function (req, res) {
+  res.render('nameList',{"data" : nameList})
+})
+
+app.post('/names', function (req, res) {
+  //add the new name to the namelist
+  if (req.body.fullName != "") {
+    nameList.push(req.body.fullName)
+  }
+  res.render('nameList', {"data" : nameList})
+})
+
+const nameList = []

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Name List</title>
+	<link rel="stylesheet" href="./css/main.css">
+	<script src="./bower_components/jquery/dist/jquery.js"></script>
+	<script src="./script/main.js"></script>
+</head>
+	<body>
+		<div id="wrapper">
+			<form action="/names" method="post">
+        			<label for="fullName">Your Name:</label>
+        			<input name="fullName" type="text"  autofocus/>
+				<br>
+				<p><input id="submit" name="submit" type="submit" value="Add"></p>
+			</form>
+            <div id="listArea">
+                <h3>Names Added</h3>
+                <ul id ="list">
+                    <% data.forEach((val)=>{ %>
+                        <li><%= val %></li>
+                    <% }) %>
+                </ul>
+            </div>
+		</div>
+	</body>
+</html>
+
+

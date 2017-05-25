@@ -23,8 +23,13 @@ p{
 #submit, #back{
     width:auto;
     color:white;
-    background-color:#2b78e4
+    background-color:#2b78e4;
+    box-shadow: 5px 5px 5px black;
 }
 .underlined{
     text-decoration: underline
+}
+
+ul {
+    border: thin solid lightgray
 }
