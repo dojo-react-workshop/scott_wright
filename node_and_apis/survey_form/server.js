@@ -57,8 +57,26 @@ app.post('/names', function (req, res) {
   //add the new name to the namelist
   if (req.body.fullName != "") {
     nameList.push(req.body.fullName)
+    writer.write(req.body.fullName + '\n')
   }
   res.render('nameList', {"data" : nameList})
 })
 
-const nameList = []
+// load initial name list
+const fs = require('fs')
+const nameFile = "./names.txt"
+let nameList = []
+fs.readFile(nameFile,'utf8', (err, data) => {
+  if(err) throw err;
+  nameList = data.toString().split("\n");
+  nameList.forEach((x,i)=>{
+    if (x==''){
+      nameList.splice(i,1)
+    }
+  })
+  console.log(`read ${nameList.length} names from ${nameFile}`)
+})
+
+// open a writer for the name list for new names
+const writer = fs.createWriteStream('./names.txt', {flags: 'a'})
+
