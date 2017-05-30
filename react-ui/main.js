@@ -6,16 +6,20 @@ RCE = React.createElement
 
 function renderReact(){
     ReactDOM.render(
-        ThreeSquares(),
+        ThreeSquares({squares: [
+                {backgroundColor: 'blue', color: 'white'},
+                {backgroundColor: 'red', color: 'blue'},
+                {backgroundColor: 'pink', color: 'green'}
+                ]}),
         reactContainer
     )
 }
 
 const ThreeSquares=(props)=>{
     const arr = []
-    arr.push(ColorSquare({style: {backgroundColor: 'blue', color: 'white'}}))
-    arr.push(ColorSquare({style: {backgroundColor: 'red', color: 'blue'}}))
-    arr.push(ColorSquare({style: {backgroundColor: 'pink', color: 'green'}}))
+    props.squares.map((agv)=>{
+        arr.push (ColorSquare({style: {backgroundColor: agv.backgroundColor, color: agv.color}}))
+    })
     return RCE('div', props, arr
     )
 }
