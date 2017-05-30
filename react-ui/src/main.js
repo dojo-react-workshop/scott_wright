@@ -1,6 +1,6 @@
 const reactContainer = document.getElementById("react");
 
-RCE = React.createElement
+const RCE = React.createElement
 
 function renderReact(){
     ReactDOM.render(
@@ -14,18 +14,18 @@ function renderReact(){
 }
 
 const ThreeSquares=(props)=>{
-    const arr = []
-    props.squares.map((agv,i)=>{
-        arr.push (ColorSquare({key: i, style: {backgroundColor: agv.backgroundColor, color: agv.color}}))
+    const arr = props.squares.map((agv,i)=>{
+        return (ColorSquare({key: i, style: {backgroundColor: agv.backgroundColor, color: agv.color}}))
     })
-    return RCE('div', null, arr
-    )
+    return(<div>{arr}</div>)
 }
 
 const ColorSquare=(props)=>{
     props.style.height = '100px'
     props.style.width = '100px'
     props.style.display = "inline-block"
-    return RCE('p', props, `${props.style.color} on ${props.style.backgroundColor}`)
+    return(
+        <p style={props.style}>{`${props.style.color} on ${props.style.backgroundColor}`}</p>
+    )
 }
 renderReact()

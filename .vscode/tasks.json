@@ -10,5 +10,12 @@
             "isBuildCommand": true,
             "isBackground": true
         }
+      {
+            "args": ["${workspaceRoot}/react-ui/src", "--out-dir", "${workspaceRoot}/react-ui/lib", "-w", "--source-maps"],
+            "taskName": "react-ui",
+            "suppressTaskName": true,
+            "isBuildCommand": true,
+            "isBackground": true
+        }
     ]
 }
