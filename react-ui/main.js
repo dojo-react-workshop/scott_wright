@@ -1,26 +1,39 @@
 const jsContainer = document.getElementById("js");
 const reactContainer = document.getElementById("react");
 
-listItems = ["Learn React", "Climb Mt. Everest", "Run a marathon", "Feed the dogs"]
+// listItems = ["Learn React", "Climb Mt. Everest", "Run a marathon", "Feed the dogs"]
 RCE = React.createElement
 
 function renderReact(){
     ReactDOM.render(
-        RCE('h1', null, 'Hello Dojo!',
-            RCE('ul',null,'Things I need to do:',
-            Component(listItems)
-        )),
+        ThreeSquares(),
         reactContainer
     )
 }
 
-const Component=(props)=>{
-    let arr=[]
-    props.forEach((val, i)=>{
-        arr.push(RCE('li',{key: i},val))
-    })
-    return arr
+const ThreeSquares=(props)=>{
+    const arr = []
+    arr.push(ColorSquare({style: {backgroundColor: 'blue', color: 'white'}}))
+    arr.push(ColorSquare({style: {backgroundColor: 'red', color: 'blue'}}))
+    arr.push(ColorSquare({style: {backgroundColor: 'pink', color: 'green'}}))
+    return RCE('div', props, arr
+    )
 }
+
+const ColorSquare=(props)=>{
+    props.style.height = '100px'
+    props.style.width = '100px'
+    props.style.display = "inline-block"
+    return RCE('p', props, `${props.style.color} on ${props.style.backgroundColor}`)
+}
+
+// const Component=(props)=>{
+//     let arr=[]
+//     props.forEach((val, i)=>{
+//         arr.push(RCE('li',{key: i},val))
+//     })
+//     return arr
+// }
 
 renderReact()
 // function renderJS() {
