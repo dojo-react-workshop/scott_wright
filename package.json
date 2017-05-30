@@ -1,0 +1,25 @@
+{
+  "name": "scott_wright",
+  "version": "1.0.0",
+  "description": "* [filter](./coding_challenges/filter.js)\r * [map](./coding_challenges/map.js)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dojo-react-workshop/scott_wright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dojo-react-workshop/scott_wright/issues"
+  },
+  "homepage": "https://github.com/dojo-react-workshop/scott_wright#readme",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.1"
+  },
+  "devDependencies": {}
+}

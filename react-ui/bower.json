@@ -1,0 +1,21 @@
+{
+  "name": "react-ui",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "WRIGHT",
+    "SCOTT"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/dojo-react-workshop/scott_wright",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.5.4"
+  }
+}
