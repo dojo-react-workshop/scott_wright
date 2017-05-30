@@ -8,14 +8,18 @@ function renderReact(){
     ReactDOM.render(
         RCE('h1', null, 'Hello Dojo!',
             RCE('ul',null,'Things I need to do:',
-                RCE('li',null,listItems[0]),
-                RCE('li',null,listItems[1]),
-                RCE('li',null,listItems[2]),
-                RCE('li',null,listItems[3])
-            )
-        ),
+            Component(listItems)
+        )),
         reactContainer
     )
+}
+
+const Component=(props)=>{
+    let arr=[]
+    props.forEach((val, i)=>{
+        arr.push(RCE('li',{key: i},val))
+    })
+    return arr
 }
 
 renderReact()
