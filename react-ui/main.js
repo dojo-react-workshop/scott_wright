@@ -2,16 +2,16 @@ const jsContainer = document.getElementById("js");
 const reactContainer = document.getElementById("react");
 
 listItems = ["Learn React", "Climb Mt. Everest", "Run a marathon", "Feed the dogs"]
-
+RCE = React.createElement
 
 function renderReact(){
     ReactDOM.render(
-        React.createElement('h1', null, 'Hello Dojo!',
-            React.createElement('ul',null,'Things I need to do:',
-                React.createElement('li',null,listItems[0]),
-                React.createElement('li',null,listItems[1]),
-                React.createElement('li',null,listItems[2]),
-                React.createElement('li',null,listItems[3])
+        RCE('h1', null, 'Hello Dojo!',
+            RCE('ul',null,'Things I need to do:',
+                RCE('li',null,listItems[0]),
+                RCE('li',null,listItems[1]),
+                RCE('li',null,listItems[2]),
+                RCE('li',null,listItems[3])
             )
         ),
         reactContainer
