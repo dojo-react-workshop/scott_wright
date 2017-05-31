@@ -12,14 +12,13 @@
         </style>
     </head>
     <body>
-        <div id="react"></div>
-        <!--<script>-->
+        <div id="react" style="text-align: center"></div>
         <script type="text/babel">
             const voteOptions = ['React', 'Vue', 'Angular', 'Ember']
 
-            //renders the voting options 
-            const VoteComponent = (props) => {
-                let {options} = props
+            //renders one vote item
+            const VoteItem = (props) =>{
+                let val = props.voteText
                 let divStyle = {
                     'width' : '300px',
                     'height' : '100px',
@@ -55,15 +54,28 @@
                     'height' : '50px',
                     'display' : 'inline-block',
                     'verticalAlign' : 'middle'
-                }
+                }     
+
+                 return (
+                    <div key={val} style={divStyle}>
+                        <div style={circleStyle}>0</div>
+                        <p style={pStyle}>{val}</p>
+                        <img style={imgStyle} src="./plus.jpg" alt="vote"/>
+                    </div>
+                    )           
+            }
+
+            //renders the voting options 
+            const VoteComponent = (props) => {
+                let {options} = props
                 const optionElements = options.map((val) => {
-                    return <div key={val} style={divStyle}><div style={circleStyle}>0</div><p style={pStyle}>{val}</p><img style={imgStyle} src="./plus.jpg" alt="vote"/></div>
+                    return VoteItem({voteText : val})
                 });
-                return (<div>{optionElements}</div>)
+                return (<div id="options">{optionElements}</div>)
             }
 
             ReactDOM.render(
-                <div>
+                <div style={{'display': 'inline-block'}}>
                     <h1>Vote Your JS Library!</h1>
                     <VoteComponent options={voteOptions}/>
                 </div>,
@@ -71,6 +83,3 @@
         </script>
     </body>
 </html>
-
-
- <!--(<h1>Vote Your JS Library!</h1>),-->
