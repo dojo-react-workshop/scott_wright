@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./node_modules/babel-standalone/babel.js"></script>
+        <script src="./node_modules/react/dist/react.js"></script>
+        <script src="./node_modules/react-dom/dist/react-dom.js"></script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div id="react"></div>
+        <!--<script>-->
+        <script type="text/babel">
+            const voteOptions = ['React', 'Vue', 'Angular', 'Ember']
+
+            //renders the voting options 
+            const VoteComponent = (props) => {
+                let {options} = props
+                let divStyle = {
+                    'width' : '300px',
+                    'height' : '100px',
+                    'lineHeight' : '100px',
+                    'border' : 'thin solid black',
+                    'display' : 'block'
+                }
+                let pStyle = {
+                    'fontSize' : '2em',
+                    'verticalAlign' : 'middle',
+                    'color' : 'red',
+                    'margin' : '0',
+                    'display' : 'inline-block',
+                    'textAlign' : 'center',
+                    'width' : '150px'
+                }
+                let circleStyle = {
+                    'width': '70px',
+                    'height': '70px',
+                    'borderRadius': '50%',
+                    'fontSize': '2em',
+                    'color': 'black',
+                    'lineHeight': '75px',
+                    'textAlign': 'center',
+                    'border': 'thin solid black',
+                    'verticalAlign' : 'middle',
+                    'display' : 'inline-block',
+                    'marginLeft' : '15px'
+                }
+
+                let imgStyle = {
+                    'width' : '50px',
+                    'height' : '50px',
+                    'display' : 'inline-block',
+                    'verticalAlign' : 'middle'
+                }
+                const optionElements = options.map((val) => {
+                    return <div key={val} style={divStyle}><div style={circleStyle}>0</div><p style={pStyle}>{val}</p><img style={imgStyle} src="./plus.jpg" alt="vote"/></div>
+                });
+                return (<div><h1>Vote Your JS Library!</h1>{optionElements}</div>)
+            }
+
+            ReactDOM.render(
+                <VoteComponent options= { voteOptions } />,
+                document.getElementById('react')
+            );
+        </script>
+    </body>
+</html>
+
+
+ <!--(<h1>Vote Your JS Library!</h1>),-->
