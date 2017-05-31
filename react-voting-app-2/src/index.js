@@ -7,23 +7,22 @@ import './index.css';
 // registerServiceWorker();
 
 //renders one vote item
-class VoteItem extends React.Component {
+const VoteItem = (props) => {
 
-    addOne = ()=>{
-        this.props.voteMe(this.props.voteText)
+    const addOne = ()=>{
+        props.voteMe(props.voteText)
     }
 
-    render = (props)=>{
-        let val = this.props.voteText
-        let voteCount = this.props.voteCount
-        return (
-        <div className="divClass" key={val}>
-            <div className="circleClass">{voteCount}</div>
-            <p className="pClass"> {val}</p>
-            <img className="voteButton" src="./plus.jpg" alt="vote" onClick={this.addOne}/>
-        </div>
-        )           
-    }
+    let val = props.voteText
+    let voteCount = props.voteCount
+    return (
+    <div className="divClass" key={val}>
+        <div className="circleClass">{voteCount}</div>
+        <p className="pClass"> {val}</p>
+        <img className="voteButton" src="./plus.jpg" alt="vote" onClick={addOne}/>
+    </div>
+    )           
+
 }
 
 //renders the voting options 
@@ -37,7 +36,7 @@ class VoteComponent extends React.Component {
             ]
     }
     addVote = (name) =>{
-        //add a vote to the matching name
+        //add a vote to the matching name and re-sort
         this.setState((oldState)=>{
             oldState.options.find(x => x.name === name).voteCount ++
             oldState.options = oldState.options.sort((a, b)=>{
@@ -49,7 +48,7 @@ class VoteComponent extends React.Component {
    
     }
     render = ()=>{ 
-
+        //initial rendering
         let {options} = this.state
             options=options.sort((a, b)=>{
             if (a.voteCount < b.voteCount) return 1
@@ -60,14 +59,14 @@ class VoteComponent extends React.Component {
         const optionElements = options.map((val,i) => {
             return <VoteItem key={val.name} voteText={val.name} voteCount={val.voteCount} voteMe={this.addVote}/>
         });
-        return (<div id="options">{optionElements}</div>)
+        return (
+            <div style={{'display': 'inline-block', 'textAlign' : 'center'}}>
+                <h1>Vote Your JS Library!</h1>
+                <div id="options">{optionElements}</div>
+            </div>
+        )
     }
 }
 
-ReactDOM.render(
-    <div style={{'display': 'inline-block', 'textAlign' : 'center'}}>
-        <h1>Vote Your JS Library!</h1>
-        <VoteComponent />
-    </div>,
-    document.getElementById('root'));
+ReactDOM.render(<VoteComponent/>, document.getElementById('root'));
 
