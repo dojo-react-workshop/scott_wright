@@ -22,7 +22,7 @@ class CounterComponent extends React.Component {
             'height' : '100px',
             'border' : 'thin solid black',
             'display' : 'block',
-            'text-align' : 'center'
+            'textAlign' : 'center'
         }
          return (
              <div style={divStyle}>
@@ -51,7 +51,7 @@ class AllCounters extends React.Component {
              <div>
                  <h1>You have {this.state.counterCount} Counters!</h1>
                  <button onClick={this.newClick}>Add A Counter</button>
-                 {counters}
+                 <div style={{'textAlign': 'center'}}>{counters}</div>
              </div>
          )
     }
