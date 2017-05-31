@@ -54,13 +54,14 @@ class VoteComponent extends React.Component {
     render = ()=>{ 
         //initial rendering
         let {options} = this.state
-            options=options.sort((a, b)=>{
+            let sortedOptions = [...options]
+            sortedOptions=sortedOptions.sort((a, b)=>{
             if (a.voteCount < b.voteCount) return 1
             if (a.voteCount > b.voteCount) return -1
             return 0
         })
 
-        const optionElements = options.map((val,i) => {
+        const optionElements = sortedOptions.map((val,i) => {
             return <VoteItem key={val.name} voteText={val.name} voteCount={val.voteCount} voteMe={this.addVote}/>
         });
         return (
