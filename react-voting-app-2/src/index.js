@@ -36,14 +36,20 @@ class VoteComponent extends React.Component {
             ]
     }
     addVote = (name) =>{
-        //add a vote to the matching name and re-sort
+        //add a vote to the matching name
         this.setState((oldState)=>{
-            oldState.options.find(x => x.name === name).voteCount ++
-            oldState.options = oldState.options.sort((a, b)=>{
-                if (a.voteCount < b.voteCount) return 1
-                if (a.voteCount > b.voteCount) return -1
-                return 0
+            // oldState.options.find(x => x.name === name).voteCount ++
+            const newLibraries = oldState.options.map((libraryObj) => {
+                if (libraryObj.name !== name) { return libraryObj; }
+                return {
+                    ...libraryObj,
+                    voteCount: libraryObj.voteCount + 1
+                }
             })
+            return {
+                ...oldState,
+                options: newLibraries
+            }
         })
    
     }
