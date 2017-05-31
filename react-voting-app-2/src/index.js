@@ -40,11 +40,12 @@ class VoteComponent extends React.Component {
         this.setState((oldState)=>{
             // oldState.options.find(x => x.name === name).voteCount ++
             const newLibraries = oldState.options.map((libraryObj) => {
-                if (libraryObj.name !== name) { return libraryObj; }
+                if (libraryObj.name !== name) { return {...libraryObj}; }
                 return {
                     ...libraryObj,
                     voteCount: libraryObj.voteCount + 1
                 }
+                // return Object.assign({}, libraryObj, { voteCount: libraryObj.voteCount + 1})
             })
             return {
                 ...oldState,
