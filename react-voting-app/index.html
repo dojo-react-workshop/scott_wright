@@ -46,7 +46,7 @@
                     'border': 'thin solid black',
                     'verticalAlign' : 'middle',
                     'display' : 'inline-block',
-                    'marginLeft' : '15px'
+                    'marginLeft' : '5px'
                 }
 
                 let imgStyle = {
@@ -56,11 +56,15 @@
                     'verticalAlign' : 'middle'
                 }     
 
+                const handleClick = () =>{
+                    alert('you clicked me')
+                }
+
                  return (
                     <div key={val} style={divStyle}>
                         <div style={circleStyle}>0</div>
                         <p style={pStyle}>{val}</p>
-                        <img style={imgStyle} src="./plus.jpg" alt="vote"/>
+                        <img style={imgStyle} src="./plus.jpg" alt="vote" onClick={handleClick}/>
                     </div>
                     )           
             }
@@ -75,7 +79,7 @@
             }
 
             ReactDOM.render(
-                <div style={{'display': 'inline-block'}}>
+                <div style={{'display': 'inline-block', 'textAlign' : 'center'}}>
                     <h1>Vote Your JS Library!</h1>
                     <VoteComponent options={voteOptions}/>
                 </div>,
