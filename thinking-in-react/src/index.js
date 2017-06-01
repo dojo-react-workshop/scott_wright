@@ -39,7 +39,7 @@ const SearchResults=(props)=>{
     let {products} = props
 
     //get unique categories from resultset
-    let unique = [...new Set(products.map(item => item.category))]
+    let unique = [...new Set(products.map(product => product.category))]
 
     //build array of ResultCategories, one per unique category.
     let categories = []
