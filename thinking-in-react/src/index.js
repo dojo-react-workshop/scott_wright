@@ -44,7 +44,9 @@ const SearchResults=(props)=>{
     //build array of ResultCategories, one per unique category.
     let categories = []
     unique.forEach((val)=>{
-        categories.push(<ResultCategory key={val} name={val}/>)
+        //this can be improved--- it's sending all of the products, 
+        //could it just send only the products for it's own category???
+        categories.push(<ResultCategory key={val} name={val} products={products}/>)
     })
 
     //send it on up
