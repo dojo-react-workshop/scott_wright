@@ -35,12 +35,24 @@ const Inputs=()=>{
     )
 }
 
-const SearchResults=()=>{
+const SearchResults=(props)=>{
+    let {products} = props
+
+    //get unique categories from resultset
+    let unique = [...new Set(products.map(item => item.category))]
+
+    //build array of ResultCategories, one per unique category.
+    let categories = []
+    unique.forEach((val)=>{
+        categories.push(<ResultCategory key={val} name={val}/>)
+    })
+
+    //send it on up
     return(
         <div className="SearchResults">
             <h3>Name</h3><h3>Price</h3>
             <br/>
-            <ResultCategory />
+            {categories}
         </div>
     )
 }
@@ -48,7 +60,7 @@ const SearchResults=()=>{
 const ResultCategory=(props)=>{
     return(
     <div className="ResultCategory">
-        <h4>props.</h4>
+        <h4>{props.name}</h4>
         <Result />
     </div>
     )
