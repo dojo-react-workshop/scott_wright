@@ -68,7 +68,7 @@ const ResultCategory=(props)=>{
     )
 }
 
-const Result=()=>{
+const Result=(props)=>{
     return(
         <div className="Result">
             <span>Football</span><span>$1000</span>
