@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 //MarkAll Compnent
 class MarkAll extends Component {
-  constructor(){
-    super()
-  }
   toggleAll = ()=>{return}
   render() {
     return (

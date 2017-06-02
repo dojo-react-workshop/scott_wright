@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 
 class FooterButtons extends Component {
-  constructor(){
-    super()
-  }
-  render() {
-    const {items} = this.props
-    let countText =  (items.length > 1) ? `${items.length} items left` : `${items.length} item left`
-    if (items.length == 0) countText = "Create a todo item!"
+  render=() => {
+    let countText =  (this.props.totalCount > 1) ? `${this.props.totalCount} items left` : `${this.props.totalCount} item left`
+    if (this.props.totalCount === 0) countText = "Create a todo item!"
     const listItems = []
     const buttons = []
-    //at least one item to show
-    if (items.length)
-        listItems.push(<li key="all" className="info"><button>All</button></li>)
-
+    
+    if (this.props.totalCount){
+        listItems.push(<li key="all" className="info"><button onClick={()=>this.props.setFilter("all")}>All</button></li>)
+    }
     //at least one active item to show
-    if (items.filter((item) => {return item.completed == false}).length)
-        listItems.push(<li key="active" className="info"><button>Active</button></li>)
+    if (this.props.activeCount)
+        listItems.push(<li key="active" className="info"><button onClick={()=>this.props.setFilter("active")}>Active</button></li>)
    
     //at least one completed item to show
-    if (items.filter((item) => {return item.completed == true}).length) {
-        listItems.push(<li key="completed" className="info"><button>Completed</button></li>)
-        buttons.push(<button className="clear-completed">Clear All Completed</button>)  
+    if (this.props.completedCount) {
+        listItems.push(<li key="completed" className="info"><button onClick={()=>this.props.setFilter("completed")}>Completed</button></li>)
+        buttons.push(<button key="clear" className="clear-completed" onClick={()=>this.props.deleteCompleted()}>Clear All Completed</button>)  
     }
     
     

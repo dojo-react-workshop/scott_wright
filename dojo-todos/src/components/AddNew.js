@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 
 class AddNew extends Component {
-  constructor(){
-    super()
+
+  handleKeyPress= (event)=>{
+    if (event.key === 'Enter'){
+      if(event.target.value)
+        this.props.insertItem(event.target.value)
+        event.target.value=""
+    }
   }
   render() {
     return (
-      <input className="new-todo" type="text" placeholder="What needs to be done?"/>
+      <input className="new-todo" 
+             type="text" 
+             placeholder="What needs to be done?"
+             onKeyPress={this.handleKeyPress}/>
     );
   }
 }
