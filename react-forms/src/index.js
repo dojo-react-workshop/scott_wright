@@ -70,7 +70,10 @@ class MyForm extends Component {
         emailText=<span style={{color:"red"}}>Email must be in format user@domain.tld</span>
         
     if (this.state.formSubmitted === true) {
-      return ( <div><h1>Validated Form</h1><h1>Thanks!</h1></div>)
+      return ( <div><h1>Validated Form</h1><h1>Thanks!</h1>
+                <p>Name: {this.state.content.name}</p>
+                <p>email: {this.state.content.email}</p>
+                </div>)
     }
     else 
     return (
