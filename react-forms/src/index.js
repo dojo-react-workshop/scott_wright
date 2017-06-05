@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 
 class MyForm extends Component {
     state={
-        name: '',
-        email: '',
-        formInvalid: true,
-        nameValid: false,
-        emailValid: false,
+        content: {name: '', email: ''},
+        validation: {
+          formInvalid: true,
+          nameValid: false,
+          emailValid: false
+        },
         formSubmitted: false,
         touched: {name: false, email: false}
     }
@@ -16,7 +17,8 @@ class MyForm extends Component {
 
   handleChange = (event)=>{
     const {name, value} = event.target
-    let {formInvalid, nameValid, emailValid} = this.state
+    let {formInvalid, nameValid, emailValid} = this.state.validation
+    const newContent = {...this.state.content}
 
     //validate form name must be 8 characters
     switch (name) {
@@ -33,11 +35,13 @@ class MyForm extends Component {
 
     formInvalid = (nameValid === true && emailValid === true) ? false : true
 
+    newContent[name] = value
+
     this.setState({
-        [name]: value,
-        formInvalid,
+        content: newContent,
+        validation: {formInvalid,
         nameValid,
-        emailValid
+        emailValid}
     })
   }
 
@@ -46,7 +50,7 @@ class MyForm extends Component {
     this.setState( {
       formSubmitted: true
     })
-    console.log('You submitted', this.state)
+    console.log('You submitted', this.state.content)
   }
 
   handleBlur = (field)=>{
@@ -60,9 +64,9 @@ class MyForm extends Component {
   render() {
     let nameText = null
     let emailText = null
-    if (this.state.nameValid === false && this.state.touched.name===true)
+    if (this.state.validation.nameValid === false && this.state.touched.name===true)
         nameText=<span style={{color:"red"}}>Name must be at least 8 characters.</span>
-    if (this.state.emailValid === false && this.state.touched.email===true)
+    if (this.state.validation.emailValid === false && this.state.touched.email===true)
         emailText=<span style={{color:"red"}}>Email must be in format user@domain.tld</span>
         
     if (this.state.formSubmitted === true) {
@@ -74,7 +78,7 @@ class MyForm extends Component {
         <form onSubmit={this.handleSubmit}>
         <input type="text" 
                      name="name"
-                     value={this.state.name}
+                     value={this.state.content.name}
                      onChange={this.handleChange}
                      onBlur={()=>this.handleBlur('name')}
                      placeholder="Name"/>
@@ -82,14 +86,14 @@ class MyForm extends Component {
         <br/>
         <input type="text" 
                       name="email"
-                      value={this.state.description} 
+                      value={this.state.content.email} 
                       onChange={this.handleChange}
                       onBlur={()=>this.handleBlur('email')}
                       placeholder="Email"/>
         {emailText}
         <br/>
         <input type="submit" 
-               disabled={this.state.formInvalid} />
+               disabled={this.state.validation.formInvalid} />
       </form>
       </div>
     )
