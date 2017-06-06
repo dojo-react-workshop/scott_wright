@@ -19,6 +19,15 @@ class ListItem extends Component {
     }
   }
 
+  handleBlur=(event)=>{
+       if(event.target.value){
+          this.props.update(this.props.id, event.target.value)
+          this.editToggle()
+      }
+      else
+        return false
+}
+
   render = ()=> {
     if (this.state.editMode ===false)
         return (
@@ -42,7 +51,7 @@ class ListItem extends Component {
             <input className="new-todo" 
                   type="text" defaultValue={this.props.text} 
                   onKeyPress={this.handleKeyPress} 
-                  onBlur={this.handleKeyPress}/>
+                  onBlur={this.handleBlur}/>
             <button className="destroy"
                     onClick={()=>{this.props.deleteItem(this.props.id)}} />
           </li>
