@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://uitk.learnvest.com/v/1.16.0/css/nm/fonts.css" />
+    <link rel="stylesheet" href="https://uitk.learnvest.com/v/1.16.0/css/nm/icons.css" />
+    <link rel="stylesheet" href="https://uitk.learnvest.com/v/1.16.0/css/nm/main.css" />
+</head>
+
+<body>
+    <div class="row">
+        <div class="columns large-6 large-centered medium-6 medium-centered small-6 small-centered">
+            <h2>Counter: <span id="counter">0</span></h2>
+            <button id="increment">Increment</button>
+            <button id="decrement">Decrement</button>
+        </div>
+    </div>
+</body>
+</body>
+
+<script>
+    function createStore(reducer) {
+        const listeners = []
+        let state 
+        return {
+            getState: function (key) {
+                return state[key]
+            },
+            subscribe: function (cb) {
+                listeners.push(cb)
+            },
+            dispatch: function (action) {
+                state = reducer(state, action)
+                listeners.forEach((cb)=>cb())
+            }
+        }
+    }
+
+    function reducer (oldState, action){
+        if (action === '')
+            oldState = {count: 0}
+        let newState = Object.assign({},oldState)
+        switch (action.type){
+            case "INC":
+                newState.count ++
+                break
+            case "DEC":
+                newState.count --
+                break
+            case "INIT":
+                newState = {count: 0}
+                break
+            default:
+        }
+        return newState
+    }
+
+    const store = createStore(reducer)
+    
+
+
+    const counterSpan = document.getElementById('counter')
+    const incButton = document.getElementById('increment')
+    const decButton = document.getElementById('decrement')
+
+    let count = 0
+
+    const render = () => {
+        counterSpan.innerHTML = store.getState('count')
+    }
+
+    store.subscribe(render)
+    store.dispatch({type : 'INIT'})
+
+    incButton.onclick = () => {
+        store.dispatch({type : 'INC'})
+        render()
+    }
+    decButton.onclick = () => {
+        store.dispatch({type : 'DEC'})
+        render()
+    }
+
+</script>
+
+</html>
