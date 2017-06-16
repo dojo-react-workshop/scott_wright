@@ -1,0 +1,25 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>canvas{width:300;height:300}</style>
+</head>
+<body>
+	<canvas id="myCanvas"></canvas>
+		<script>
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+
+		// Red rectangle
+		ctx.beginPath();
+		ctx.lineWidth="6";
+		ctx.strokeStyle="red";
+		ctx.fillStyle="#FF0000";
+		ctx.fillRect(5,5,290,140); 
+		ctx.stroke();
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mongoose</title>
+</head>
+<body>
+	<ul>
+		<% for (var i = 0; i< cats.length; i++){ %>
+			<li><%= cats[i].f_name %></li>
+		<% } %>
+	</ul>
+	<form action = "/add" method = "post">
+		<input type ="text" name = "f_name">
+		<input type = "submit">
+	</form>
+</body>
+</html>
+

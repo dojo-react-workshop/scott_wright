@@ -1,0 +1,97 @@
+Microsoft Windows [Version 10.0.14393]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+C:\Users\wri1802>cd Desktop
+
+C:\Users\wri1802\Desktop>mkdir gittest
+
+C:\Users\wri1802\Desktop>cd gittest
+
+C:\Users\wri1802\Desktop\gittest>git init
+Initialized empty Git repository in C:/Users/wri1802/Desktop/gittest/.git/
+
+C:\Users\wri1802\Desktop\gittest>type nul > index.html
+
+C:\Users\wri1802\Desktop\gittest>type nul > styles.css
+
+C:\Users\wri1802\Desktop\gittest>type nul > aboutMe.txt
+
+C:\Users\wri1802\Desktop\gittest>git add *
+
+C:\Users\wri1802\Desktop\gittest>git commit -m "updated AboutMe"
+[master (root-commit) b3cfad9] updated AboutMe
+ Committer: WRIGHT, SCOTT <scottwright@northwesternmutual.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 aboutMe.txt
+ create mode 100644 index.html
+ create mode 100644 styles.css
+
+C:\Users\wri1802\Desktop\gittest>echo "movie" > aboutMe.txt
+
+C:\Users\wri1802\Desktop\gittest>git add aboutMe.txt
+
+C:\Users\wri1802\Desktop\gittest>git commit -m "added movie to aboutMe"
+[master 3929db1] added movie to aboutMe
+ Committer: WRIGHT, SCOTT <scottwright@northwesternmutual.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+
+C:\Users\wri1802\Desktop\gittest>git log
+commit 3929db1a22fbed0d5c0fa778225f081f0d7e41a3
+Author: WRIGHT, SCOTT <scottwright@northwesternmutual.com>
+Date:   Tue May 2 14:38:24 2017 -0500
+
+    added movie to aboutMe
+
+commit b3cfad9060a8119311f5086fbfa0b620e87db8ee
+Author: WRIGHT, SCOTT <scottwright@northwesternmutual.com>
+Date:   Tue May 2 14:36:51 2017 -0500
+
+    updated AboutMe
+
+C:\Users\wri1802\Desktop\gittest>git checkout HEAD~ aboutMe.txt
+
+C:\Users\wri1802\Desktop\gittest>type aboutMe.txt
+
+C:\Users\wri1802\Desktop\gittest>echo "book" > aboutMe.txt
+
+C:\Users\wri1802\Desktop\gittest>git add aboutMe.txt
+
+C:\Users\wri1802\Desktop\gittest>git commit -m "added book"
+[master 62e85ce] added book
+ Committer: WRIGHT, SCOTT <scottwright@northwesternmutual.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\wri1802\Desktop\gittest>

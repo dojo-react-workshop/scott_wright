@@ -1,0 +1,154 @@
+*{
+	/*border: 1px dotted red;*/
+	border-collapse: collapse;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+h1{
+	font-size:250%;
+}
+#wrapper{
+	width:970px;
+	margin: auto auto;
+}
+
+header{
+	width:970px;
+	height:85px;
+	background: linear-gradient(#4e69a2,#355495);
+}
+h2{
+	font-size:200%;
+}
+#logo{
+	width:500px;
+	height:100px;
+	display:inline-block;
+	color:white;
+	font-size: 36px;
+	font-weight: bold;
+	padding-top:30px;
+	margin-left:15px;
+	text-decoration: none;
+}
+.fontBold{
+	font-weight:bold;
+}
+#login{
+	width:60px;
+	height:16px;
+	background-color:#4267b2;
+	display:inline-block;
+	color:white;
+	font-weight: bold;
+	text-align:center;
+	border: thin solid black;
+ 	border-radius: 2px;
+	margin-top:40px;
+	vertical-align: top;
+}
+h5{
+	margin: 10px 0px 5px 0px;
+	color:white;
+	font-weight:normal;
+}
+#email, #password{
+	width:150px;
+	height:100px;
+	display:inline-block;
+	vertical-align: top;
+	padding-top:10px;
+}
+#password a{
+	color: #85a2c8;
+	text-decoration: none;
+}
+main{
+	background-color:#edf0f5;
+	padding:20px;
+	height:500px;
+}
+#mainLeft img{
+	vertical-align: middle;
+	margin-right:20px;
+	width:50px;
+}
+#mainLeft p,span{
+	font-size:110%;
+}
+#mainLeft{
+	width:460px;
+	height:600px;
+	display:inline-block;
+	margin-top:50px;
+}
+#mainRight{
+	width:390px;
+	height:500px;
+	display:inline-block;
+	vertical-align: top;
+}
+#mainRight h6{
+	color: #85a2c8;
+	font-size:80%;
+	font-weight: normal;
+	width:250px;
+}
+#mainRight input[type=button]{
+	text-align: center;
+	font-size:120%;
+	width:180px;
+	color: white;
+	background-color: green;
+	padding: 5px;
+	border-radius: 3px;
+ 	box-shadow: 1px 1px 1px black;
+	margin-top:10px;
+	margin-bottom: 20px;
+}
+#mainRight a{
+	text-decoration: none;
+}
+#fName, #lName{
+	width:180px;
+	height:20px;
+	font-size:120%;
+}
+#userId, #pass{
+	width:367px;
+	height:20px;
+	font-size:120%;	
+}
+#birthDay{
+	margin-right:10px;
+}
+#why{
+	width:100px;
+	font-size:90%;
+	color:#80add7;
+}
+
+footer{
+	width:970px;
+	height:100px;
+}
+footer ul{
+	list-style:none;
+}
+footer li{
+	display:inline-table;
+	width:80px;
+	font-size:90%;
+	margin: 3px;
+}
+#cw{
+	margin-left:43px;
+	font-size:80%;
+	color: grey;
+}
+#lang ul,li{
+	display:inline-table;
+	width:auto;
+	font-size:90%;
+	margin: 3px;
+}

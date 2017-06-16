@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Awesome Webpage</title>
+		<link rel="stylesheet" type="text/css" href="./style/main.css">
+		<script type="text/javascript">
+			var x = document.getElementsByClassName('headerBox')
+			console.log(x)
+		</script>
+	</head>
+	<body>
+		<header style="outline: thin solid black">
+			<h1>Hello! Welcome to my page!!!</h1>
+			<h2>This is soo cool.</h2>
+			<div class="headerBox">
+				<a href="http://www.apple.com" target="_blank">Apple</a>
+			</div>
+			<div class="headerBox">
+				<a href="http://www.packers.com" target="_blank">GB Packers</a>
+			</div>
+			<br/>
+			<img src="./img/logo.png" alt="gb logo" class="packerLogo">
+		</header>
+		<section>
+			<table id='teamTable'>
+				<tr>
+					<th>City</th>
+					<th>Name</th>
+					<th>Color</th>
+				</tr>
+				<tr>
+					<td>Green Bay</td>
+					<td>Packers</td>
+					<td>Green</td>
+				</tr>
+				<tr>
+					<td>Dallas</td>
+					<td>Cow Boys</td>
+					<td>Blue</td>
+				</tr>
+				<tr>
+					<td>Boston</td>
+					<td>Patriots</td>
+					<td>Black</td>
+				</tr>
+			</table>
+		</section>
+	</body>
+</html>

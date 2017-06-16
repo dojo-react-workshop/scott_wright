@@ -1,0 +1,14 @@
+*{
+	/*border: 1px dotted red;*/
+    font-family: Helvetica, Arial, sans-serif;
+}
+#wrapper{
+	width:870px;
+	margin:auto;
+	padding:0px;
+}
+img{
+	width:180px;
+	padding:10px;
+	display:inline-block;
+}

@@ -1,0 +1,51 @@
+/**{
+	outline: thin dotted red;
+}*/
+a {
+	color: gold;
+}
+
+h1{
+	font-style: italic;
+}
+
+.packerLogo{
+	height: 100px;
+	width: 100px;
+	border: thin solid blue;
+	margin-top: 10px;
+	margin-bottom: 100px;
+}
+
+header{
+	background-color: lightgreen;
+	border: thing solid blue;
+    text-align: center;
+    padding-top:20px;
+    box-shadow: 10px 10px 5px gray;
+}
+
+#teamTable,th,tr,td{
+	border: thin solid black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	width: 300px;
+	height: 110%;
+}
+
+th{
+    background-color: green;
+}
+td{
+	text-align: center;
+	background-color: gold;
+}
+
+
+.headerBox{
+	height: 30px;
+	width: 100px;
+	display: inline-block;
+	vertical-align: top;
+}

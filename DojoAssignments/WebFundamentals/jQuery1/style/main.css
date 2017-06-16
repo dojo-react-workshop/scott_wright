@@ -1,0 +1,256 @@
+*{
+	/*border: 1px dotted red;*/
+    font-family: Helvetica, Arial, sans-serif;
+}
+#wrapper{
+	width:870px;
+	margin:auto;
+	padding:50px;
+}
+#topNav{
+	width:870px;
+	height:60px;
+	margin-bottom:10px;
+	border:thin solid gray;
+	border-radius:5px;
+	background: linear-gradient(#efefef,#d5d5d5);
+}
+#topNav img{
+	height:60px;
+	border-radius: 5px, 0px, 0px, 5px;
+	display: inline-block;
+}
+#topNav ul{
+	margin:0px;
+	padding:0px;
+	vertical-align: top;
+	display: inline-block;
+	height:60px;
+}
+#topNav li{
+	width:100px;
+	height:60px;
+	display: table-cell;
+	text-decoration: none;
+	list-style-type: none;
+	text-align:center;
+	vertical-align: middle;
+	font-weight: bold;
+	border-right: thin solid lightgray;
+}
+#topNav form{
+	display: inline-block;
+	vertical-align:top;
+	position:relative;
+	top:15px;
+	left:50px;
+}
+#topNav form img{
+	height:20px;
+	position:relative;
+	top:6px;
+	right:5px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius:10px;
+}
+#topNav input[type=search]{
+	width:150px;
+	height:20px;
+	background-color: white;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius:10px;
+}
+#header{
+	width:870px;
+	height:369px;
+}
+#header img{
+	width:870px;
+}
+#headerNav{
+	width:870px;
+	height:30px;
+	margin-bottom:10px;
+	background: linear-gradient(#4f4c4c,#393836);
+}
+#headerNav ul{
+	margin:0px;
+	padding:0px;
+	vertical-align: top;
+	display: inline-block;
+	height:30px;
+}
+#headerNav li{
+	padding: 0px 15px 0px 15px;
+	height:30px;
+	font-size:80%;
+	white-space: nowrap;
+	display: table-cell;
+	text-decoration: none;
+	list-style-type: none;
+	text-align:center;
+	color:#7199b6;
+	vertical-align: middle;
+}
+#headerNav li:first-child {
+    color: white;
+}
+#headerNav li:not(:last-child):after {
+	content:"/";
+	padding: 0px 0px 0px 30px;
+	color: gray;
+	font-size:200%;
+	vertical-align:middle;
+}
+
+#main{
+	width:870px;
+	height:400px;
+	text-align:center;
+	border:thin solid lightgray;
+	background:linear-gradient(white,#f2f2f2);
+}
+#mainTop{
+	width:870px;
+	height:60px;
+	text-align:center;
+	border: thin solid lightgray;
+}
+#discover{
+	color:lightgray;
+	border-right:thin solid lightgray;
+	display:inline-block;
+	padding-right:15px;
+	padding-left:15px;
+	font-size:130%;
+	vertical-align: middle;
+	margin: 0px;
+}
+#browse{
+	margin-left:20px;
+	background:linear-gradient(#6b9ec0,#407292);
+	padding:5px;
+	color:white;
+	border-radius:5px;
+	display:inline-block;
+	vertical-align: middle;
+}
+
+#mainBottom{
+	width:870px;
+	height:270px;
+	text-align: left;
+	vertical-align: top;
+	border: thin solid lightgray;
+	padding-top:20px;
+}
+#preview,#tour,#trial{
+	width:190px;
+	height:240px;
+	padding-left:5px;
+	padding-right:5px;
+	vertical-align: top;
+	border-right:thin solid gray;
+	display: inline-block;
+	position: relative;
+}
+#buy{
+	width:190px;
+	height:240px;
+	padding-left:5px;
+	padding-right:5px;
+	display: inline-block;
+	position: relative;
+}
+
+h4{
+	display: inline-block;
+	vertical-align:middle;
+	text-align: center;
+	margin: 0px;
+}
+
+
+.icon{
+	height:20px;
+	vertical-align: middle;
+	display: inline-block;
+	padding-right:10px;
+}
+
+.product{
+	margin: auto auto;
+	display: block;
+}
+
+.button{
+	width:170px;
+	height:20px;
+	background:linear-gradient(#64b5f0, #629ec8);
+	color: white;
+	border-radius:3px;
+	text-align:center;
+	margin: 0px 10px 0px 10px;
+	position: absolute;
+	bottom:0px;
+}
+
+.green{
+	background:linear-gradient(green, gray);
+}
+
+#bottom{
+	width:870px;
+	height:230px;
+}
+#bottomTop{
+	width:870px;
+	height:60px;
+}
+
+#bottomTop ul{
+	margin: 20px 0px 0px 0px;
+	padding:0px;
+	vertical-align: top;
+	display: inline-block;
+	height:30px;
+}
+#bottomTop li{
+	margin: 10px 10px 0px 0px;
+	width:130px;
+	height:30px;
+	font-size:80%;
+	white-space: nowrap;
+	display: inline-block;
+	text-decoration: none;
+	list-style-type: none;
+	text-align:left;
+	vertical-align: middle;
+	border-bottom: thin solid lightgray; 
+	font-weight:bold;
+}
+
+#bottomBottom{
+	width:870px;
+	height:170px;
+}
+
+#bottomBottom ul{
+	margin:0px;
+	padding:0px;
+	display:inline-block;
+	vertical-align:top;
+	font-size:70%;
+	text-decoration: none;
+	list-style-type: none;
+}
+#bottomBottom li{
+	margin: 10px 10px 0px 0px;
+	padding:0px;
+	width:130px;
+	white-space: nowrap;
+}
+#footer{
+	font-size:70%;
+}
+

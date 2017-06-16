@@ -1,0 +1,40 @@
+Open Terminal (on windows....)
+Run cmd
+
+Navigate to your Desktop
+cd %USERPROFILE%\Desktop
+
+Create a new directory, call it test
+mkdir test
+
+Make files called index.html, styles.css, commands.txt inside of the test directory
+cd test
+type nul > index.html
+type nul > styles.css
+type nul > commands.txt
+
+make a copy of index.html and call it index_2.html
+copy index.html index_2.html
+
+In the 'test' directory, remove the 'styles.css' file
+del styles.css
+
+Nagivate back to your desktop and make another directory, call it 'destination'
+cd ..
+mkdir destination
+
+Move the index_2.html from test to destination directory
+move test\index_2.html destination
+
+Now, check and see what files are in test and destination
+cd test
+dir
+
+cd ..
+cd destination
+dir
+
+Delete the destination directory
+cd ..
+rmdir /s destination
+
